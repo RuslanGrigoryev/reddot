@@ -27,12 +27,19 @@ module.exports = function(grunt) {
 		    		'dist/css/style.css': 'src/scss/main.scss'
 		    	}
 		    }
+		},
+		concat: {
+			dist: {
+				src: ['src/js/*js'],
+				dest: 'dist/js/app.js'
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 
-	grunt.registerTask('default', ['jshint', 'sass']);
+	grunt.registerTask('default', ['jshint', 'sass', 'concat']);
 
 };
