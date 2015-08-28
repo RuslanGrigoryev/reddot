@@ -17,11 +17,22 @@ module.exports = function(grunt) {
 				browser: true,
 				devel: true
 			}
+		},
+		sass: {
+		    dist: {
+		    	options: {
+		    		style: 'compressed'
+		    	},
+		    	files: {
+		    		'dist/css/style.css': 'src/scss/main.scss'
+		    	}
+		    }
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 
-	grunt.registerTask('default', ['jshint']);
+	grunt.registerTask('default', ['jshint', 'sass']);
 
 };
