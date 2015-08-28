@@ -2,3 +2,4 @@
 /bower_components
 /dist
 /.sass-cache
+/src/img/_sprite.scss

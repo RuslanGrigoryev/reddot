@@ -36,9 +36,10 @@ module.exports = function(grunt) {
 		},
 		sprite:{
 			all : {
-				src: 'src/img/*.png',
-				dest: 'dist/img/sprite.png',
-				destCss: 'src/img/_sprite.scss'
+				src: ['src/img/*.png'],
+				destImg: 'dist/img/sprite.png',
+				destCSS: 'src/img/_sprite.scss',
+				cssFormat: 'scss'
 			}
 		}
 	});
