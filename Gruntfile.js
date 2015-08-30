@@ -41,6 +41,16 @@ module.exports = function(grunt) {
 				destCSS: 'src/img/_sprite.scss',
 				cssFormat: 'scss'
 			}
+		},
+		copy: {
+			main: {
+				files: [
+					{
+						src: '*.html',
+						dest: 'dist/'
+					}
+				]
+			}
 		}
 	});
 
@@ -48,7 +58,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-spritesmith');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
-	grunt.registerTask('default', ['jshint', 'sass', 'concat', 'sprite']);
+	grunt.registerTask('default', ['jshint', 'sass', 'concat', 'sprite', 'copy']);
 
 };
